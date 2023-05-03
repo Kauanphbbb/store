@@ -3,6 +3,10 @@ export class UsersRepository {
 
   async saveUser(user) {
     this.users.push(user);
-    console.log(this.users);
+    return user;
+  }
+
+  async listUsers() {
+    return this.users;
   }
 }
