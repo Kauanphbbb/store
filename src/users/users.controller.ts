@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { UsersRepository } from './users.repository';
 
-@Controller('/users')
+@Controller('users')
 export class UsersController {
   constructor(private usersRepository: UsersRepository) {}
   @Post()
