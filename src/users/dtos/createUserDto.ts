@@ -1,14 +1,25 @@
-import { IsNumber, IsString } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsString, Validate } from 'class-validator';
+import { ValidateCPF } from 'src/utils/validateCPF';
 
 export class CreateUserDto {
-  @IsString()
+  @IsNotEmpty()
+  @IsEmail()
   readonly email: string;
+
+  @IsNotEmpty()
   @IsString()
   readonly password: string;
+
+  @IsNotEmpty()
   @IsString()
   readonly name: string;
-  @IsNumber()
-  readonly age: number;
+
+  @IsNotEmpty()
   @IsString()
   readonly lastName: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @Validate(ValidateCPF)
+  readonly cpf: string;
 }

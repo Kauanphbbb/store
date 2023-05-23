@@ -10,18 +10,25 @@ import {
 export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
+
   @Column()
   name: string;
+
+  @Column({ unique: true })
+  cpf: string;
+
   @Column()
   email: string;
+
   @Column()
   password: string;
-  @Column()
-  age: number;
+
   @Column()
   lastName: string;
+
   @CreateDateColumn()
   createdAt: Date;
+
   @UpdateDateColumn()
   updatedAt: Date;
 }
